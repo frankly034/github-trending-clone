@@ -1,0 +1,35 @@
+.container {
+  color: #8b949e;
+}
+
+.serialNumber {
+  margin-right: 1.5rem !important;
+  font-size: 0.8rem;
+}
+
+.description {
+  font-size: 0.9rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statsGroup {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.statsCount {
+  padding-right: 1rem;
+}
+
+.button {
+  background-color: #21262d !important;
+  font-size: 0.75rem !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  margin-left: auto;
+}
+
