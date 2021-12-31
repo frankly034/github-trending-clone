@@ -1,0 +1,36 @@
+.avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+
+.container {
+  display: flex;
+  background-color: #0d1117;
+}
+
+.author {
+  text-decoration: none;
+  cursor: pointer;
+  color: #58a6ff;
+}
+
+.author:hover, .username:hover {
+  text-decoration: underline;
+  color: #58a6ff;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.username {
+  text-decoration: none;
+  cursor: pointer;
+  color: #c9d1d9;
+  font-size: 1rem;
+}
+
+

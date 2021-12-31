@@ -1,0 +1,11 @@
+.avatar {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+
+.fs {
+  font-size: 0.8rem!important;
+}
+
