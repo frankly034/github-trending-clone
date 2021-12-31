@@ -1,0 +1,24 @@
+.container {
+  max-width: 60rem;
+  margin: 2.5rem auto;
+  color: #8b949e;
+}
+
+.body {
+  background-color: #0d1117;
+}
+
+.header {
+  background-color: #161b22 !important;
+  border-bottom: solid #30363d 1px !important;
+  padding: 1rem !important;
+}
+
+.card {
+  border: solid #30363d 1px !important;
+}
+
+.button {
+  font-weight: bold !important;
+  padding: 0.4rem 1.2rem !important;
+}

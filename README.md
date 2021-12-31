@@ -1,46 +1,115 @@
-# Getting Started with Create React App
+# GITHUB TRENDING PAGE CLONE
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This is an React app, a clone of the Github Trending Page. Its a simple app to demostrate the basic features of the react: components, routes and API integration.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- [Features](#features)
+- [Concepts and Apis Employed](#concepts-and-apis-employed)
+- [Built with](#built-with)
+- [Designs](#designs)
+- [Live Preview](#live-preview)
+- [Required Installations](#required-installations)
+- [Installation of This App](#instalation-of-this-repository)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- Features -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
+- A user upon visiting the app, sees a list of trending repositories and developers with option to filter by language and date.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- concepts and apis employed -->
 
-### `yarn build`
+## Concepts and APIs Employed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The Github trends api information was developed by Haikel Fazzani [here](https://github.com/wutility/github-trending-api).
+- Official API documentation for the movie db can be found [here](https://developers.themoviedb.org/3)
+- This app demonstrates the use of basic concepts of React 
+  - Components
+  - Routing
+  - State management (React Hooks)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- BUILT wITH -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built with
 
-### `yarn eject`
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+- React
+- React Bootstrap
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- DESIGNS -->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Designs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+See original github trending page screenshots below;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Repository Page.
 
-## Learn More
+- Developers Page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- LIVE PREVIEW -->
+
+## Live Preview
+
+Find the live version [here](https://frankly034-github-trending.netlify.app/).
+Below is a screenshot of what it looks like.
+
+
+<!-- REQUIRED INSTALLATION -->
+
+## Required Installations
+
+- Npm
+
+<!-- INSTALLATION -->
+
+## Installation of This Repository
+
+Once you have installed the required packages shown on the [Required Installations](#required-installations), proceed with the following steps
+
+Clone the Repository
+
+```Shell
+your@pc:~$ git clone https://github.com/frankly034/github-trending-clone.git
+```
+
+Move to the downloaded folder
+
+```Shell
+your@pc:~$ cd github-trending-clone
+```
+
+Install all packages
+
+```Shell
+your@pc:~$ npm install
+```
+
+Open the app
+
+```Shell
+your@pc:~$ npm start
+```
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+- 🇳🇬 Lewis Ugege - franklynugege@gmail.com | [Github Account](https://github.com/frankly034) | [Twitter](https://twitter.com/@wizlulu) | [Linkedin](https://linkedin.com/in/lewis-ugege) | 
+
+## Acknowledgements
+
+- <a href="https://www.npmjs.com/package/github-trends-api">Github trends api</a> and God Almighty .
