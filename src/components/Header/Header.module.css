@@ -1,0 +1,14 @@
+.header {
+  background-color: #161b22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: solid 1px #30363d;
+  color: #c9d1d9;
+  padding: 3rem;
+}
+
+.h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
