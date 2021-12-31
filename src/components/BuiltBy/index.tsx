@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./BuiltBy.module.css";
 
-export interface IBuiltBy {
+interface IBuiltBy {
   builtBy: { username: string; url: string; avatar: string }[];
 }
 const BuiltBy: React.FC<IBuiltBy> = ({ builtBy }) => {
