@@ -26,7 +26,7 @@ const Template: React.FC<ITemplate> = ({ tab, children }) => {
     {
       label: "Developer",
       value: "developer",
-      path: ROUTE_DEVELOPERS
+      path: ROUTE_DEVELOPERS,
     },
   ];
 
@@ -40,21 +40,20 @@ const Template: React.FC<ITemplate> = ({ tab, children }) => {
         <Card className={styles.card}>
           <Card.Header className={styles.header}>
             <ButtonGroup>
-              {
-                buttons.map(({label, value, path}) => <Button
+              {buttons.map(({ label, value, path }) => (
+                <Button
+                  key={value}
                   variant={tab === value ? "primary" : "secondary"}
                   size="sm"
                   className={styles.button}
                   onClick={() => handleNavigation(path)}
                 >
                   {label}
-                </Button>)
-              }
+                </Button>
+              ))}
             </ButtonGroup>
           </Card.Header>
-          <Card.Body className={styles.body}>
-            <Card.Body>{children}</Card.Body>
-          </Card.Body>
+          {children}
         </Card>
       </div>
     </div>
