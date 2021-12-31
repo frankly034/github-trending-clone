@@ -1,10 +1,35 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, ButtonGroup, Button } from "react-bootstrap";
 
 import Header from "../Header";
 import styles from "./Template.module.css";
+import { ROUTE_HOME, ROUTE_DEVELOPERS } from "../../constants";
 
-const index: React.FC = (props) => {
+interface ITemplate {
+  tab: string;
+}
+
+const Template: React.FC<ITemplate> = ({ tab, children }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
+  const buttons = [
+    {
+      label: "Repositories",
+      value: "repositories",
+      path: ROUTE_HOME,
+    },
+    {
+      label: "Developer",
+      value: "developer",
+      path: ROUTE_DEVELOPERS
+    },
+  ];
+
   return (
     <div>
       <Header
@@ -15,16 +40,20 @@ const index: React.FC = (props) => {
         <Card className={styles.card}>
           <Card.Header className={styles.header}>
             <ButtonGroup>
-              <Button variant="primary" size="sm" className={styles.button}>
-                Repositories
-              </Button>
-              <Button variant="secondary" size="sm" className={styles.button}>
-                Developer
-              </Button>
+              {
+                buttons.map(({label, value, path}) => <Button
+                  variant={tab === value ? "primary" : "secondary"}
+                  size="sm"
+                  className={styles.button}
+                  onClick={() => handleNavigation(path)}
+                >
+                  {label}
+                </Button>)
+              }
             </ButtonGroup>
           </Card.Header>
           <Card.Body className={styles.body}>
-            <Card.Body>{props.children}</Card.Body>
+            <Card.Body>{children}</Card.Body>
           </Card.Body>
         </Card>
       </div>
@@ -32,4 +61,4 @@ const index: React.FC = (props) => {
   );
 };
 
-export default index;
+export default Template;
