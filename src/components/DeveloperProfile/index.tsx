@@ -15,7 +15,7 @@ const DeveloperProfile: React.FC<IDeveloperProfile> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <div className="me-2">
+      <div className="me-3">
         <a href={url}>
           <img
             className={styles.avatar}

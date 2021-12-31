@@ -2,21 +2,20 @@ import React from "react";
 
 import styles from "./RepoOverview.module.css";
 import PopularTag from "../PopularTag";
-import RepoTitle from "../RepoTitle";
+import RepoContentTitle from "../RepoContentTitle";
 
 interface IRepoOverview {
-  author: string;
   repoName: string;
   repoUrl: string;
   description: string;
 }
 const RepoOverview: React.FC<IRepoOverview> = (props) => {
-  const { author, repoName, repoUrl, description } = props;
+  const { repoName, repoUrl, description } = props;
 
   return (
     <div className={styles.container}>
       <PopularTag />
-      <RepoTitle author={author} repoName={repoName} repoUrl={repoUrl} isContent />
+      <RepoContentTitle repoName={repoName} repoUrl={repoUrl} />
       <p className={styles.description}>{description}</p>
     </div>
   );
