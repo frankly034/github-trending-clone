@@ -1,0 +1,21 @@
+.btnDark, .menu {
+  background-color: #161b22 !important;
+  color: #8b949e !important;
+  border: none !important;
+}
+
+.btnDark:hover {
+  box-shadow: none !important;
+}
+
+.dropdownItem {
+  border-bottom: solid 1px #21262d !important;
+  color: #c9d1d9 !important;
+  font-size: 0.8rem;
+}
+
+.dropdownItem:hover {
+  border-bottom: solid 1px #21262d;
+  background-color: #1f6feb !important;
+  color: #c9d1d9;
+}

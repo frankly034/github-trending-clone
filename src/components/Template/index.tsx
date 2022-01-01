@@ -1,57 +1,45 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Card, ButtonGroup, Button } from "react-bootstrap";
+import React, { useContext, useEffect } from "react";
+import { Card } from "react-bootstrap";
 
 import Header from "../Header";
+import Nav from "../Nav";
+import DateRange from "../DateRange";
+import { AppContext } from "../../providers/context";
 import styles from "./Template.module.css";
-import { ROUTE_HOME, ROUTE_DEVELOPERS } from "../../constants";
 
-interface ITemplate {
-  tab: string;
+export interface ITemplate {
+  tab: "repositories" | "developers";
 }
 
 const Template: React.FC<ITemplate> = ({ tab, children }) => {
-  const navigate = useNavigate();
-
-  const handleNavigation = (path: string) => {
-    navigate(path);
-  };
-
-  const buttons = [
-    {
-      label: "Repositories",
-      value: "repositories",
-      path: ROUTE_HOME,
-    },
-    {
-      label: "Developer",
-      value: "developer",
-      path: ROUTE_DEVELOPERS,
-    },
-  ];
-
+  const { state, dispatch } = useContext(AppContext);
+  useEffect(() => {
+    const prefixes = {
+      repositories: "See what the GitHub community is most excited about",
+      developers: "These are the developers building the hot tools",
+    };
+    if (dispatch) {
+      dispatch({
+        type: "setSubTitlePrefix",
+        newState: prefixes[tab],
+      });
+    }
+  }, [dispatch, tab]);
   return (
     <div>
       <Header
         title="Trending"
-        subTitle="See what the GitHub community is most excited about today."
+        subTitle={`${
+          state?.subTitlePrefix
+        } ${state?.dateRange?.label?.toLowerCase()}`}
       />
       <div className={styles.container}>
         <Card className={styles.card}>
           <Card.Header className={styles.header}>
-            <ButtonGroup>
-              {buttons.map(({ label, value, path }) => (
-                <Button
-                  key={value}
-                  variant={tab === value ? "primary" : "secondary"}
-                  size="sm"
-                  className={styles.button}
-                  onClick={() => handleNavigation(path)}
-                >
-                  {label}
-                </Button>
-              ))}
-            </ButtonGroup>
+            <div className="d-flex justify-content-between">
+              <Nav tab={tab} />
+              <DateRange value={state?.dateRange?.value} />
+            </div>
           </Card.Header>
           {children}
         </Card>

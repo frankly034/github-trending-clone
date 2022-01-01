@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ListGroup } from "react-bootstrap";
 import githubTrends from "github-trends-api";
 
 import Template from "../../components/Template";
 import RepoItem from "../../components/RepoItem";
-import styles from './Repositories.module.css';
+import { AppContext } from "../../providers/context";
+import styles from "./Repositories.module.css";
 
 interface IRepository {
   author: string;
@@ -23,15 +24,18 @@ interface IRepository {
 }
 
 const Repositories = () => {
+  const { state } = useContext(AppContext);
   const [repos, setRepos] = useState<IRepository[]>([]);
   useEffect(() => {
     const fetchRepositories = async () => {
-      const data = await githubTrends();
+      const data = await githubTrends({
+        since: state?.dateRange?.value,
+      });
       setRepos(data);
     };
 
     fetchRepositories();
-  }, []);
+  }, [state?.dateRange?.value]);
 
   return (
     <Template tab="repositories">
