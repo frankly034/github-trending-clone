@@ -8,11 +8,6 @@
   font-size: 0.9rem;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-between;
-}
-
 .statsGroup {
   display: flex;
   font-size: 0.8rem;

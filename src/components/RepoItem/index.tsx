@@ -42,7 +42,7 @@ const RepoItem: React.FC<IRepoItem> = (props) => {
         <p className={`col-9 ${styles.description}`}>{repoDesc}</p>
       </div>
 
-      <div className={styles.stats}>
+      <div className={"d-sm-flex justify-content-between"}>
         <div className={styles.statsGroup}>
           {
             language && <span className={styles.statsCount}>{language}</span>

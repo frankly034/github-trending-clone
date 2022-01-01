@@ -38,9 +38,9 @@ const Template: React.FC<ITemplate> = ({ tab, children }) => {
       <div className={styles.container}>
         <Card className={styles.card}>
           <Card.Header className={styles.header}>
-            <div className="d-flex justify-content-between">
+            <div className="d-md-flex justify-content-between">
               <Nav tab={tab} />
-              <div className="d-flex">
+              <div className="d-md-flex">
                 <LanguageDropdown />
                 <DateRange value={state?.dateRange?.value} />
               </div>
