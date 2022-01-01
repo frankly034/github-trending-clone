@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is an React app, a clone of the Github Trending Page. Its a simple app to demostrate the basic features of the react: components, routes and API integration.
+This is a clone of the Github Trending Page. Its a simple app to demostrate the basic features of the react: components, routes and API integration.
 
 ## Table of Contents
 
@@ -33,6 +33,8 @@ This is an React app, a clone of the Github Trending Page. Its a simple app to d
   - Components
   - Routing
   - State management (React Hooks)
+  - Custom hooks
+  - CSS Modules
 
 <!-- BUILT wITH -->
 
