@@ -6,6 +6,7 @@ import Nav from "../Nav";
 import DateRange from "../DateRange";
 import { AppContext } from "../../providers/context";
 import styles from "./Template.module.css";
+import LanguageDropdown from "../LanguageDropdown";
 
 export interface ITemplate {
   tab: "repositories" | "developers";
@@ -13,6 +14,7 @@ export interface ITemplate {
 
 const Template: React.FC<ITemplate> = ({ tab, children }) => {
   const { state, dispatch } = useContext(AppContext);
+  
   useEffect(() => {
     const prefixes = {
       repositories: "See what the GitHub community is most excited about",
@@ -38,7 +40,10 @@ const Template: React.FC<ITemplate> = ({ tab, children }) => {
           <Card.Header className={styles.header}>
             <div className="d-flex justify-content-between">
               <Nav tab={tab} />
-              <DateRange value={state?.dateRange?.value} />
+              <div className="d-flex">
+                <LanguageDropdown />
+                <DateRange value={state?.dateRange?.value} />
+              </div>
             </div>
           </Card.Header>
           {children}

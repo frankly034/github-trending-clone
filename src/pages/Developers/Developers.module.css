@@ -2,3 +2,11 @@
   background-color: #0d1117 !important;
   border: solid #30363d 1px !important;
 }
+
+.emptyState {
+  background-color: #0d1117 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.5rem;
+}
