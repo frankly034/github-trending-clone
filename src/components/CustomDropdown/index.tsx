@@ -3,7 +3,7 @@ import { Dropdown } from "react-bootstrap";
 
 import styles from "./CustomDropdown.module.css";
 
-interface IOptions {
+export interface IOptions {
   label: string;
   value: string;
 }
@@ -22,7 +22,7 @@ const CustomDropdown: React.FC<ICustomDropdown> = ({
   handleClick,
 }) => {
   return (
-    <Dropdown>
+    <Dropdown className="ms-2">
       <Dropdown.Toggle className={styles.btnDark} id="dropdown-basic" size="sm">
         {label}: <span className="fw-bold">{value}</span>
       </Dropdown.Toggle>

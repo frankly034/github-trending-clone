@@ -23,6 +23,8 @@ const reducer = (state: any, action: IAction) => {
       return { ...state, subTitlePrefix: action.newState };
     case "setDateRange":
       return { ...state, dateRange: action.newState };
+    case "setLanguage":
+      return { ...state, language: action.newState };
     default:
       return;
   }

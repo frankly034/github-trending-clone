@@ -24,19 +24,20 @@ const Developers = () => {
     const fetchRepositories = async () => {
       const data = await githubTrends({
         section: "developers",
-        language: "javascript",
+        language: state?.language?.value || "javascript",
         since: state?.dateRange?.value,
       });
       setDevelopers(data);
     };
 
     fetchRepositories();
-  }, [state?.dateRange?.value]);
+  }, [state?.dateRange?.value, state?.language?.value]);
 
   return (
     <Template tab={"developers"}>
       <ListGroup variant="flush">
-        {developers.map((developer: IDeveloper, serialNumber: number) => {
+        {developers.length
+        ? developers.map((developer: IDeveloper, serialNumber: number) => {
           const { reponame: repoName, repourl: repoUrl, ...rest } = developer;
           return (
             <ListGroup.Item className={styles.listItem} key={repoUrl}>
@@ -48,7 +49,11 @@ const Developers = () => {
               />
             </ListGroup.Item>
           );
-        })}
+        })
+        : <span className={styles.emptyState}>
+        {`It looks like we don’t have any trending developers for ${state?.language?.label}`}
+      </span>
+      }
       </ListGroup>
     </Template>
   );

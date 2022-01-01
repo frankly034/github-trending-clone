@@ -1,3 +1,7 @@
+.menu {
+  max-height: 20rem;
+  overflow: scroll;
+}
 .btnDark, .menu {
   background-color: #161b22 !important;
   color: #8b949e !important;
@@ -9,6 +13,7 @@
 }
 
 .dropdownItem {
+  background-color: #161b22 !important;
   border-bottom: solid 1px #21262d !important;
   color: #c9d1d9 !important;
   font-size: 0.8rem;
