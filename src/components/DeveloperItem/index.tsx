@@ -29,7 +29,7 @@ const DeveloperItem: React.FC<IDeveloperItem> = (props) => {
   } = props;
   return (
     <div className={`row ${styles.container}`}>
-      <div className="col-md-4">
+      <div className="col-md-5">
         <div className="d-flex">
           <span className={styles.serialNumber}>{serialNumber}</span>
           <DeveloperProfile

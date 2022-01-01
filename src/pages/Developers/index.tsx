@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ListGroup } from "react-bootstrap";
 import githubTrends from "github-trends-api";
 
+import { AppContext } from "../../providers/context";
 import Template from "../../components/Template";
 import styles from "./Developers.module.css";
 import DeveloperItem from "../../components/DeveloperItem";
@@ -17,22 +18,23 @@ interface IDeveloper {
 }
 
 const Developers = () => {
+  const { state } = useContext(AppContext);
   const [developers, setDevelopers] = useState<IDeveloper[]>([]);
   useEffect(() => {
     const fetchRepositories = async () => {
       const data = await githubTrends({
         section: "developers",
         language: "javascript",
+        since: state?.dateRange?.value,
       });
-      console.log("developer", data)
       setDevelopers(data);
     };
 
     fetchRepositories();
-  }, []);
+  }, [state?.dateRange?.value]);
 
   return (
-    <Template tab={"developer"}>
+    <Template tab={"developers"}>
       <ListGroup variant="flush">
         {developers.map((developer: IDeveloper, serialNumber: number) => {
           const { reponame: repoName, repourl: repoUrl, ...rest } = developer;
