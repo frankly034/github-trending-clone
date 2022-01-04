@@ -64,6 +64,7 @@ See original github trending page screenshots below;
 
 Find the live version [here](https://frankly034-github-trending.netlify.app/).
 Below is a screenshot of what it looks like.
+<img width="1440" alt="Screenshot 2022-01-04 at 09 40 12" src="https://user-images.githubusercontent.com/31358867/148032018-15801eaa-c38f-47a4-9cf2-95824e421c8b.png">
 
 
 <!-- REQUIRED INSTALLATION -->
