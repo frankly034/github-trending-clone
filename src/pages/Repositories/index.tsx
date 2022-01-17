@@ -1,4 +1,6 @@
 import { ListGroup } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import Template from "../../components/Template";
 import RepoItem from "../../components/RepoItem";
@@ -22,11 +24,15 @@ export interface IRepository {
 }
 
 const Repositories = () => {
-  const { repos, state } = useRepositories();
+  const { repos, loading, state } = useRepositories();
   return (
     <Template tab="repositories">
       <ListGroup variant="flush">
-        {repos.length ? (
+        {loading ? (
+          <span className={styles.emptyState}>
+            <FontAwesomeIcon icon={faSpinner} spin />
+          </span>
+        ) : repos.length ? (
           repos.map((repo: IRepository) => {
             const {
               reponame: repoName,
